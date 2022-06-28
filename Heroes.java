@@ -29,6 +29,11 @@ public class Heroes {
             damage = 10;
         }
         opponent.setHitPoints(opponent.getHitPoints() - damage);
+        System.out.println(this);
+        System.out.println(opponent);
+        System.out.println();
+        System.out.println();
+        Thread.sleep(1000);
     }
 
     public void duelToTheDeath(Heroes opponent){
