@@ -1,7 +1,7 @@
 public class world {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Heroes Superman = new Heroes("Superman");
-        Heroes Spiderman = new Heroes("Spiderman");
+        Heroes Batman = new Heroes("Batman");
         
         Batman.duelToTheDeath(Superman);
 
