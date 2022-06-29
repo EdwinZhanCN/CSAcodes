@@ -20,7 +20,7 @@ public class Heroes {
         this.hitPoints = hitPoints;
     }
 
-    public void duel(Heroes opponent){
+    public void duel(Heroes opponent) throws InterruptedException {
         double randomNumber = Math.random();
         int damage = 0;
         if( randomNumber < 0.5){
@@ -36,7 +36,7 @@ public class Heroes {
         Thread.sleep(1000);
     }
 
-    public void duelToTheDeath(Heroes opponent){
+    public void duelToTheDeath(Heroes opponent) throws InterruptedException {
         while(this.hitPoints > 0 && opponent.getHitPoints() > 0){
             duel(opponent);
         }
@@ -48,7 +48,7 @@ public class Heroes {
         }
     }
 
-    public String nFightsToTheDeath (Heroes opponent, int times){
+    public String nFightsToTheDeath (Heroes opponent, int times) throws InterruptedException {
         int winTimes = 0;
         int opponentWinTimes = 0;
         while (times > 0){
