@@ -1,2 +1,2 @@
 # CSAcodes
-csa in-class code
+csa in-class code / Labratory
