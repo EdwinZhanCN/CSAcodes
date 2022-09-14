@@ -14,8 +14,8 @@ public class fileReader {
 
             while((line = br.readLine()) != null){
                 String[] lineData = line.split(",");
-                Translation T = new Translation(lineData[0].replace('"', ' ').replaceAll(" ", "").toLowerCase(), lineData[1]
-                        .replace('"', ' ').replaceAll(" ", ""),position);
+                Translation T = new Translation(lineData[0].replace('"', ' ').toLowerCase(), lineData[1]
+                        .replace('"', ' '),position);
                 array.add(T);
                 position++;
             }
