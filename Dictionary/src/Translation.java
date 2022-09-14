@@ -1,3 +1,5 @@
+package Dictionary.src;
+
 public class Translation {
     String english;
     String chinese;
