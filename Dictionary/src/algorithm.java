@@ -7,19 +7,23 @@ import java.util.Scanner;
 public class algorithm {
     public static void userInteraction(ArrayList<Translation> array) throws InterruptedException {
         Scanner sc = new Scanner(System.in);
-        String answer;
+        String answer = "y";
+        String target = "";
         do {
-            System.out.println("Please enter an english word.");
-            String target = sc.next().toLowerCase();
+            System.out.println("Please enter an english word/phrase.");
+            target = sc.nextLine().toLowerCase();
+            if((int)target.charAt(0) < 32){
+                System.out.println("Don't enter a space in front of the phrase!");
+                continue;
+            }
             Date date = new Date();
             System.out.println(searchWord(array, target));
             Date date1 = new Date();
             System.out.println("Time costs: " + (date1.getTime() - date.getTime()) + "ms");
             System.out.println();
             Thread.sleep(1000);
-            answer = sc.next();
             System.out.println("Do you want to continue the searching?(type 'y' for agree or type anything else to exit.)");
-            answer = sc.next();
+            answer = sc.nextLine();
         }while(answer.equals("y"));
     }
 
@@ -43,15 +47,27 @@ public class algorithm {
             }
         }
 
+        if (target.length() < 2){
+            while(temp > 0) {
+                temp--;
+                if (list.get(temp).getEnglish().equals(target)) return "The definition is: " + "\n" +list.get(temp).getChinese();
+            }
+        }
+
         if ((int) list.get(temp).getEnglish().charAt(1) > (int) target.charAt(1)){
             while(temp > 0) {
                 temp--;
-                if (list.get(temp).getEnglish().equals(target)) return "The definition is: " + "\n" +list.get(temp).getChinese() + list.get(694233).getEnglish();
+                if (list.get(temp).getEnglish().equals(target)) return "The definition is: " + "\n" +list.get(temp).getChinese();
             }
-        }else{
+        }else if((int) list.get(temp).getEnglish().charAt(1) < (int) target.charAt(1) && (int) list.get(temp).getEnglish().charAt(1) != 32){
             while(temp < list.size()-1) {
                 temp++;
-                if (list.get(temp).getEnglish().equals(target)) return "The definition is: " + "\n" +list.get(temp).getChinese() +list.get(401782).getEnglish();
+                if (list.get(temp).getEnglish().equals(target)) return "The definition is: " + "\n" +list.get(temp).getChinese();
+            }
+        }else{
+            while(temp > 0) {
+                temp--;
+                if (list.get(temp).getEnglish().equals(target)) return "The definition is: " + "\n" +list.get(temp).getChinese();
             }
         }
         return "Word not found";
