@@ -12,6 +12,8 @@ public class algorithm {
         do {
             System.out.println("Please enter an English word/phrase.");
             target = sc.nextLine().toLowerCase();
+            target = mergeBlank(target);
+            target = trim(target);
             try {
                 Date date = new Date();
                 System.out.println(searchWord(array, target));
