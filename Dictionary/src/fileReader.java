@@ -5,7 +5,6 @@ import java.util.*;
 
 public class fileReader {
     public static void readFile(ArrayList<Translation> array){
-
         try{
             BufferedReader br = new BufferedReader(new FileReader("English Chinese Translations.csv"));
             String line;

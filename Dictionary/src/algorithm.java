@@ -8,22 +8,27 @@ public class algorithm {
     public static void userInteraction(ArrayList<Translation> array) throws InterruptedException {
         Scanner sc = new Scanner(System.in);
         String answer = "y";
-        String target = "";
+        String target;
         do {
-            System.out.println("Please enter an english word/phrase.");
+            System.out.println("Please enter an English word/phrase.");
             target = sc.nextLine().toLowerCase();
-            if((int)target.charAt(0) < 32){
-                System.out.println("Don't enter a space in front of the phrase!");
+            try {
+                Date date = new Date();
+                System.out.println(searchWord(array, target));
+                Date date1 = new Date();
+                System.out.println("Time costs: " + (date1.getTime() - date.getTime()) + "ms");
+                System.out.println();
+            }catch(StringIndexOutOfBoundsException e){
+                System.out.println("Illegal character input!(Maybe it is not an English word....)");
                 continue;
             }
-            Date date = new Date();
-            System.out.println(searchWord(array, target));
-            Date date1 = new Date();
-            System.out.println("Time costs: " + (date1.getTime() - date.getTime()) + "ms");
-            System.out.println();
             Thread.sleep(1000);
             System.out.println("Do you want to continue the searching?(type 'y' for agree or type anything else to exit.)");
             answer = sc.nextLine();
+            if(answer.length() > 3){
+                System.out.println("You seems like type a phrase, plz check again.(type 'y' for continue the searching)");
+                answer = sc.nextLine();
+            }
         }while(answer.equals("y"));
     }
 
@@ -72,4 +77,47 @@ public class algorithm {
         }
         return "Word not found";
     }
+
+
+    public static int getBlank(String str, int index) {
+        if (index < str.length()) {
+            if (str.charAt(index) == ' ') {
+                return getBlank(str, index + 1) + 1;
+            } else {
+                return 0;
+            }
+        }
+        return 0;
+    }
+
+    public static String mergeBlank(String str){
+        int num;
+        String a;
+        String b;
+        for(int index = 0; index < str.length(); index++){
+            num = getBlank(str, index);
+            if(num >= 2){
+                a = str.substring(0,index);
+                b = str.substring(index + num -1);
+                str = a+b;
+            }
+        }
+        return str;
+    }
+
+    public static String trim(String str){
+        if(str.charAt(0) == ' '){
+            str = str.substring(1);
+        }
+
+        if (str.charAt(str.length() -1) == ' '){
+            str = str.substring(0, str.length() - 1);
+        }
+        return str;
+    }
+
+
+
+
+
 }
