@@ -4,9 +4,10 @@ import java.io.*;
 import java.util.*;
 
 public class fileReader {
-    public static void readFile(ArrayList<Translation> array){
+    /** csv import*/
+    public static void readFile(ArrayList<Translation> array, String fileName){
         try{
-            BufferedReader br = new BufferedReader(new FileReader("English Chinese Translations.csv"));
+            BufferedReader br = new BufferedReader(new FileReader(fileName));
             String line;
 
             int position = 0;
