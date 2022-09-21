@@ -1,5 +1,3 @@
-package Dictionary.src;
-
 public class Fuzzyquery {
     public static void main(String[] args) {
         System.out.println(fuzzySearch("hello", "hello"));

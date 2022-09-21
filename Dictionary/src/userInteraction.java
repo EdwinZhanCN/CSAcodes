@@ -64,7 +64,7 @@ public class userInteraction {
     }
 
     /**
-     * Bleach out surplus blanks.
+     * Bleach out surplus blanks between word and word.
      * @param str the string that user want to bleach out surplus blanks from inside a phrase.
      * @return return a new string.
      */

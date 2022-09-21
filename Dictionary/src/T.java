@@ -1,7 +1,7 @@
 package Dictionary.src;
 
 public class T {
-    /** algorithm for get levenshteinDistance */
+    /** algorithm for get the levenshteinDistance */
     public static int getLevenshteinDistance(String X, String Y)
     {
         int m = X.length();

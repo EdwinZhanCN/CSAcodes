@@ -4,10 +4,10 @@ import java.util.*;
 
 public class algorithm {
     /**
-     * searchWord method used to find the word's definition and output it.
-     * @param list The words list
+     * searchWord method used to find out the word's definition and output it.
+     * @param list The words and translations list
      * @param target The user input
-     * @return return a translation
+     * @return return a translation of target word.
      */
     public static String searchWord(ArrayList<Translation> list, String target){
         /* binarySearch for initial letter of the target */

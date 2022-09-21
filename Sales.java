@@ -44,8 +44,8 @@ public class Sales {
         System.out.println("Enter an integer value: ");
         answer = scan.nextInt();
         int count = 0;
-        for(int i = 0; i < sales.length; i++){
-            if(sales[i] > answer){
+        for(int i = 1; i < sales.length+1; i++){
+            if(sales[i-1] > answer){
                 count ++;
             }
         }

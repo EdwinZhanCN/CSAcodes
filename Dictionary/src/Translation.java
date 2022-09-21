@@ -23,6 +23,10 @@ public class Translation {
         return english;
     }
 
+    /**
+     * override the toString method, so that the user can know all information about the word.
+     * @return String
+     */
     @Override
     public String toString(){
         return "English: " + english +
