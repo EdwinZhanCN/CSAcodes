@@ -20,7 +20,7 @@ public class userInteraction {
             target  = trim(target);
 
             /* Avoiding illegal inputs. */
-            try {
+            try{
                 Date date = new Date();
                 System.out.println(algorithm.searchWord(array, target));
                 Date date1 = new Date();
@@ -30,6 +30,7 @@ public class userInteraction {
                 System.out.println("Illegal character input!(Maybe it is not an English word....)");
                 continue;
             }
+
 
             /* Continue? */
             Thread.sleep(1000);
