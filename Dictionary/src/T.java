@@ -1,7 +1,7 @@
 package Dictionary.src;
 
 public class T {
-
+    /** algorithm for get levenshteinDistance */
     public static int getLevenshteinDistance(String X, String Y)
     {
         int m = X.length();
@@ -27,6 +27,12 @@ public class T {
         return T[m][n];
     }
 
+    /**
+     * return the similarity of two Strings.
+     * @param x String want to compare.
+     * @param y String want to compare.
+     * @return similarity.
+     */
     public static double findSimilarity(String x, String y) {
         if (x == null || y == null) {
             throw new IllegalArgumentException("Strings must not be null");

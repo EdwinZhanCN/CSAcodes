@@ -3,7 +3,12 @@ package Dictionary.src;
 import java.util.*;
 
 public class algorithm {
-
+    /**
+     * searchWord method used to find the word's definition and output it.
+     * @param list The words list
+     * @param target The user input
+     * @return return a translation
+     */
     public static String searchWord(ArrayList<Translation> list, String target){
         /* binarySearch for initial letter of the target */
         ArrayList<String> similar = new ArrayList<>();

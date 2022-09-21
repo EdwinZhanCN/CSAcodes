@@ -5,6 +5,12 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class userInteraction {
+
+    /**
+     * the doAction method start the main program
+     * @param array an ArrayList that contains all Translation type of words extract from csv.
+     * @throws InterruptedException to avoid warning by using sleep method.
+     */
     public static void doAction(ArrayList<Translation> array) throws InterruptedException {
         Scanner sc = new Scanner(System.in);
         String answer = "y";
@@ -45,7 +51,7 @@ public class userInteraction {
     }
 
 
-    /**Trim ProMax */
+    /**Find blanks */
     public static int getBlank(String str, int index) {
         if (index < str.length()) {
             if (str.charAt(index) == ' ') {
@@ -57,21 +63,31 @@ public class userInteraction {
         return 0;
     }
 
-    public static String mergeBlank(String str){
+    /**
+     * Bleach out surplus blanks.
+     * @param str the string that user want to bleach out surplus blanks from inside a phrase.
+     * @return return a new string.
+     */
+    public static String mergeBlank(String str) {
         int num;
         String a;
         String b;
-        for(int i = 0; i < str.length(); i++){
+        for (int i = 0; i < str.length(); i++) {
             num = getBlank(str, i);
-            if(num >= 2){
-                a = str.substring(0,i);
-                b = str.substring(i + num -1);
-                str = a+b;
+            if (num >= 2) {
+                a = str.substring(0, i);
+                b = str.substring(i + num - 1);
+                str = a + b;
             }
         }
         return str;
     }
 
+    /**
+     * bleach out surplus blanks.
+     * @param str String input.
+     * @return new String.
+     */
     public static String trim(String str){
         if(str.charAt(0) == ' '){
             str = str.substring(1);
