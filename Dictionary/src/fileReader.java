@@ -14,8 +14,12 @@ public class fileReader {
 
             while((line = br.readLine()) != null){
                 String[] lineData = line.split(",");
-                Translation T = new Translation(lineData[0].replace("\"", "").toLowerCase(), lineData[1]
-                        .replace("\"", ""),position);
+                String English = lineData[0].replace("\"","");
+                String Chinese = "";
+                for(int i = 1; i < lineData.length; i++){
+                    Chinese += lineData[i] .replace("\"", "");
+                }
+                Translation T = new Translation(English.toLowerCase(), Chinese,position);
                 array.add(T);
                 position++;
             }
