@@ -21,12 +21,13 @@ public class userInteraction {
             System.out.println("Please enter an English word/phrase.");
             target = sc.nextLine().toLowerCase();
 
-            /* root out the surplus blanks. */
-            target = mergeBlank(target);
-            target  = trim(target);
-
             /* Avoiding illegal inputs. */
             try{
+                /* root out the surplus blanks. */
+                target = mergeBlank(target);
+                target  = trim(target);
+
+
                 Date date = new Date();
                 System.out.println(algorithm.searchWord(array, target));
                 Date date1 = new Date();
