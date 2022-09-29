@@ -7,10 +7,11 @@ public class Word {
 
     String pinyin;
 
-    public Word(String english, String chinese, String partOfSpeech){
+    public Word(String english, String chinese, String partOfSpeech,String pinyin){
         this.chinese = chinese;
         this.english = english;
         this.partOfSpeech = partOfSpeech;
+        this.pinyin = pinyin;
     }
 
 
