@@ -33,7 +33,7 @@ public class T {
      * @param y String want to compare.
      * @return similarity.
      */
-    public static double findSimilarity(String x, String y) {
+    public static boolean findSimilarity(String x, String y) {
         if (x == null || y == null) {
             throw new IllegalArgumentException("Strings must not be null");
         }
@@ -41,8 +41,8 @@ public class T {
         double maxLength = Double.max(x.length(), y.length());
         if (maxLength > 0) {
             // optionally ignore case if needed
-            return (maxLength - getLevenshteinDistance(x, y)) / maxLength;
+            return (maxLength - getLevenshteinDistance(x, y)) / maxLength > 0.82;
         }
-        return 1.0;
+        return true;
     }
 }

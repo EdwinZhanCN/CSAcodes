@@ -44,23 +44,26 @@ public class algorithm {
         if ((int) list.get(temp).getEnglish().charAt(1) >(int) target.charAt(1)){
             while(temp > 0) {
                 temp--;
-                if(T.findSimilarity(list.get(temp).getEnglish(),target) > 0.80) similar.add(list.get(temp).getEnglish());
+                if(T.findSimilarity(list.get(temp).getEnglish(),target)) similar.add(list.get(temp).getEnglish());
                 if (list.get(temp).getEnglish().equals(target)) return list.get(temp).toString();
             }
         }else if((int) list.get(temp).getEnglish().charAt(1) < (int) target.charAt(1) && (int) list.get(temp).getEnglish().charAt(1) != 32){
             while(temp < list.size()-1) {
                 temp++;
-                if(T.findSimilarity(list.get(temp).getEnglish(),target) > 0.80) similar.add(list.get(temp).getEnglish());
+                if(T.findSimilarity(list.get(temp).getEnglish(),target)) similar.add(list.get(temp).getEnglish());
                 if (list.get(temp).getEnglish().equals(target)) return list.get(temp).toString();
             }
         }else{
                 while(temp > 0) {
                 temp--;
-                    if(T.findSimilarity(list.get(temp).getEnglish(),target) > 0.80) similar.add(list.get(temp).getEnglish());
+                if(T.findSimilarity(list.get(temp).getEnglish(),target)) similar.add(list.get(temp).getEnglish());
                 if (list.get(temp).getEnglish().equals(target)) return list.get(temp).toString();
             }
         }
 
+
         return "Word not found, maybe you want these?" + similar;
     }
+
+
 }
