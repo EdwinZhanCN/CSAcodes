@@ -1,7 +1,7 @@
 package Translator;
 
 public class Word {
-    String english;
+    String[] english;
     String chinese;
     String partOfSpeech;
 
@@ -9,7 +9,7 @@ public class Word {
 
     public Word(String english, String chinese, String partOfSpeech,String pinyin){
         this.chinese = chinese;
-        this.english = english;
+        this.english = english.split(" ");
         this.partOfSpeech = partOfSpeech;
         this.pinyin = pinyin;
     }
@@ -23,7 +23,7 @@ public class Word {
         return chinese;
     }
 
-    public String getEnglish() {
+    public String[] getEnglish() {
         return english;
     }
 

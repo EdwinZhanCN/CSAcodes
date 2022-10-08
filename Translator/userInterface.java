@@ -11,7 +11,6 @@ public class userInterface {
         do {
             System.out.println("Please enter an english sentence that you want to translate ");
             target = sc.nextLine();
-            target.substring(0,1) = target.substring(0,1).toLowerCase();
             try{
                 System.out.println(algorithm.translate(target, array));
             }catch(StringIndexOutOfBoundsException e){

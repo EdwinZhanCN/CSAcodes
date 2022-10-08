@@ -1,6 +1,6 @@
 package Translator;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class algorithm {
     public static String translate(String target,ArrayList<Word> list){
@@ -8,20 +8,38 @@ public class algorithm {
         String translation = "";
         String pinyin = "";
         int len = tag.length;
-        ArrayList<String> matches = new ArrayList<>();
+        ArrayList<Word> matches = new ArrayList<>();
         for(int i = 0; i<tag.length; i++){
             for (int j = 0; j < list.size(); j++) {
-                if (list.get(j).getEnglish().contains(tag[i])) {
-                    matches.add(list.get(j).getChinese());
-                }
+
             }
-        }
-        for(String str: matches){
-            translation += str + " ";
         }
 
         return pinyin +
                 "\n" + matches;
+    }
+
+   public static void onEvent(ArrayList<Word> possibles){
+        ArrayList<Word> subjects = new ArrayList<>();
+        ArrayList<Word> verbs = new ArrayList<>();
+        ArrayList<Word> objects = new ArrayList<>();
+        for(Word possible: possibles){
+            if(possible.getPartOfSpeech().equals("n") || possible.getPartOfSpeech().equals("pron")){
+                subjects.add(possible);
+            }else if(possible.getPartOfSpeech().equals("v")){
+
+            }
+        }
+   }
+
+    public static String delRepeat(String str){
+        Set<String> set = new HashSet<String>();
+        for(int i = 0; i < str.length(); i++){
+            if(!set.add(str.substring(i, i+1))){
+                return str.substring(0,i) + str.substring(i+1);
+            }
+        }
+        return str;
     }
 
 }
