@@ -3,7 +3,7 @@ package Translator;
 import java.util.*;
 
 public class userInterface {
-    public static void doAction(ArrayList<Word> array){
+    public static void doAction(ArrayList<String> array){
         Scanner sc = new Scanner(System.in);
         String answer = "y";
         String target;

@@ -6,12 +6,17 @@ import java.io.*;
 import java.util.*;
 
 public class fileReader {
-    public static void readFile(ArrayList<Word> array, String fileName){
+    public static void readFile(ArrayList<String> array, String fileName){
         try{
             BufferedReader br = new BufferedReader(new FileReader(fileName));
             String line;
 
             int position = 0;
+            ArrayList<String> english = new ArrayList<>();
+            ArrayList<String> chinese = new ArrayList<>();
+            ArrayList<String> prtSpeech = new ArrayList<>();
+            ArrayList<String> py = new ArrayList<>();
+
 
             while((line = br.readLine()) != null){
                 String[] lineData = line.split(",");
@@ -28,8 +33,6 @@ public class fileReader {
                 String pinyin = lineData[2].replace("\"","");
                 pinyin = findParentheses(pinyin,'(',')').toLowerCase();
 
-                Word W = new Word(English,Chinese,partOfSpeech,pinyin);
-                array.add(W);
                 position++;
             }
 
