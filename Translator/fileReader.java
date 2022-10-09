@@ -23,15 +23,19 @@ public class fileReader {
 
                 String English = lineData[3].replace("\"","");
                 English = findParentheses(English,'(',')').toLowerCase();
+                english.add(English);
 
                 String Chinese = lineData[1] .replace("\"", "");
                 Chinese = findParentheses(Chinese,'(',')').toLowerCase();
+                chinese.add(Chinese);
 
                 String partOfSpeech = lineData[0].replace("\"","");
                 partOfSpeech = findParentheses(partOfSpeech,'(',')').toLowerCase();
+                prtSpeech.add(partOfSpeech);
 
                 String pinyin = lineData[2].replace("\"","");
                 pinyin = findParentheses(pinyin,'(',')').toLowerCase();
+                py.add(pinyin);
 
                 position++;
             }
