@@ -17,7 +17,7 @@ public class fileReader {
                 String[] lineData = line.split(",");
 
                 String English = lineData[3].replace("\"","");
-                English = findParentheses(English,'(',')');
+                English = findParentheses(English,'(',')').replace("to ", "");
 
                 String Chinese = lineData[1] .replace("\"", "");
                 Chinese = findParentheses(Chinese,'(',')');
@@ -32,7 +32,6 @@ public class fileReader {
 
 
                 Word S = new Word(English,Chinese,pinyin,partOfSpeech);
-                System.out.println(S.getEnglish());
                 array.add(S);
                 position++;
             }

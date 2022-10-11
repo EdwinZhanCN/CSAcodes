@@ -28,5 +28,11 @@ public class Word {
     public String getPinyin() {
         return pinyin;
     }
+
+    @Override
+    public String toString(){
+        return chinese + ": " +
+                english;
+    }
 }
 
