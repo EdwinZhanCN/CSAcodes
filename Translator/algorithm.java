@@ -9,14 +9,17 @@ public class algorithm {
         String pinyin = "";
         int len = tag.length;
         ArrayList<String> matches = new ArrayList<>();
+        System.out.println(Arrays.toString(tag));
         for(int i = 0; i<tag.length; i++){
             for (int j = 0; j < list.size(); j++) {
-
+                    if(tag[i].equalsIgnoreCase(" "+list.get(i).getEnglish())){
+                        translation += list.get(i).getChinese();
+                    }
                 }
             }
 
         return pinyin +
-                "\n" + matches;
+                "\n" + translation;
     }
 
 

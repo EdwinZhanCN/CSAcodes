@@ -22,13 +22,17 @@ public class fileReader {
                 String Chinese = lineData[1] .replace("\"", "");
                 Chinese = findParentheses(Chinese,'(',')');
 
+
                 String partOfSpeech = lineData[0].replace("\"","");
                 partOfSpeech = findParentheses(partOfSpeech,'(',')');
+
 
                 String pinyin = lineData[2].replace("\"","");
                 pinyin = findParentheses(pinyin,'(',')');
 
+
                 Word S = new Word(English,Chinese,pinyin,partOfSpeech);
+                System.out.println(S.getEnglish());
                 array.add(S);
                 position++;
             }
