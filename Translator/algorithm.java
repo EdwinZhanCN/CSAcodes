@@ -3,7 +3,7 @@ package Translator;
 import java.util.*;
 
 public class algorithm {
-    public static String translate(String target,ArrayList<String> list){
+    public static String translate(String target,ArrayList<Word> list){
         String[] tag = target.split(" ");
         String translation = "";
         String pinyin = "";

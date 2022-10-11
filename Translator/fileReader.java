@@ -6,37 +6,30 @@ import java.io.*;
 import java.util.*;
 
 public class fileReader {
-    public static void readFile(ArrayList<String> array, String fileName){
+    public static void readFile(ArrayList<Word> array, String fileName){
         try{
             BufferedReader br = new BufferedReader(new FileReader(fileName));
             String line;
 
             int position = 0;
-            ArrayList<String> english = new ArrayList<>();
-            ArrayList<String> chinese = new ArrayList<>();
-            ArrayList<String> prtSpeech = new ArrayList<>();
-            ArrayList<String> py = new ArrayList<>();
-
 
             while((line = br.readLine()) != null){
                 String[] lineData = line.split(",");
 
                 String English = lineData[3].replace("\"","");
-                English = findParentheses(English,'(',')').toLowerCase();
-                english.add(English);
+                English = findParentheses(English,'(',')');
 
                 String Chinese = lineData[1] .replace("\"", "");
-                Chinese = findParentheses(Chinese,'(',')').toLowerCase();
-                chinese.add(Chinese);
+                Chinese = findParentheses(Chinese,'(',')');
 
                 String partOfSpeech = lineData[0].replace("\"","");
-                partOfSpeech = findParentheses(partOfSpeech,'(',')').toLowerCase();
-                prtSpeech.add(partOfSpeech);
+                partOfSpeech = findParentheses(partOfSpeech,'(',')');
 
                 String pinyin = lineData[2].replace("\"","");
-                pinyin = findParentheses(pinyin,'(',')').toLowerCase();
-                py.add(pinyin);
+                pinyin = findParentheses(pinyin,'(',')');
 
+                Word S = new Word(English,Chinese,pinyin,partOfSpeech);
+                array.add(S);
                 position++;
             }
 
