@@ -129,7 +129,7 @@ adv,还是,háishi,still
 adv,都,dōu,"All, both"
 adv,非常,fēicháng,extremely
 conj,和,hé,"with, and"
-mv,会,huì,"be able to, will"
+mv,会,huì,"will"
 mw,个,gè,a
 mw,元,yuán,yuan
 mw,分,fēn,Minute
@@ -459,7 +459,8 @@ v,打车,dǎchē,Take a taxi
 v,教,jiāo,to teach
 v,明白,míngbai,to understand
 v,是,shì,Yes
-v,有,yǒu,"Have, has"
+v,有,yǒu,have
+v,有,yǒu,has
 v,来,lái,to come 
 v,来到,láidào,came
 v,洗,xǐ,to wash
@@ -739,7 +740,7 @@ n,红色,hóngsè,red
 n,护照,hùzhào,passport
 n,花园,huāyuán,garden
 n,会,huì,meeting
-n,鸡,jī,Chickens
+n,鸡,jī,chicken
 n,交通,jiāotōng,transportation
 n,饺子,jiǎozi,Dumplings
 n,脚,jiǎo,foot
@@ -2186,7 +2187,7 @@ n,所长 ,suǒcháng,Director
 adv,提前 ,tíqián,in advance 
 v,体现 ,tǐxiàn,to present 
 v,突出,tūchū,to extrude 
-adv,突然 ,tūrán,Suddenly
+adv,突然 ,tūrán,suddenly
 n,危害 ,wēihài,Harm
 prep,围 ,wéi,Encircle
 conj,为了 ,wèile,For
@@ -2223,12 +2224,12 @@ adj,正式,zhèngshì,formal
 v,证,zhèng,to certificate
 adj,直,zhí,straight
 v,直播 ,zhíbō,to live broadcast
-adv,直到 ,zhídào,Until
+adv,直到 ,zhídào,until
 v,值 ,zhí,Value
 v,值得 ,zhíde,be worth it 
-adv,只好 ,zhǐhǎo,Had to
-adv,只是 ,zhǐshì,Just
-conj,只有 ,zhǐyǒu,Only
+adv,只好 ,zhǐhǎo,had to
+adv,只是 ,zhǐshì,just
+conj,只有 ,zhǐyǒu,only
 adv,至今 ,zhìjīn,to date 
 adv,至少 ,zhìshǎo,at least 
 n,周围 ,zhōuwéi,Around
@@ -2242,3 +2243,4 @@ adj,自主,zìzhǔ,Autonomy
 adj,总,zǒng,total
 v,总结,zǒngjié,to sum up
 adv,左右,zuǒyòu,about
+adj,你的,nide,your
