@@ -74,7 +74,4 @@ public class Heroes {
         return name + ": " + hitPoints + " hp";
     }
 
-
-
-
 }
